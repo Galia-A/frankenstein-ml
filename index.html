@@ -6,7 +6,7 @@
 <title>Frankenstein Analysis</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <style type="text/css">
-  pre { line-height: 125%; }
+  pre { line-height: 125%; margin: 0; }
 td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
 td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -13111,7 +13111,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="2.-Background">2. Background<a class="anchor-link" href="#2.-Background">&#182;</a></h1><p>1816, The year without summer. Five friends: Lord Byron, Percy Shelley, Mary Godwin (not yet married), Dr. John Polidori and Claire Clairmont, have assembled at the Villa Diodati near lake Geneva and were engaged in a friendly contest of writing horror stories. In this setting, Mary (18 at the time) have wrote "Frankenstein, or the Modern Prometheus".</p>
+<h1 id="2.-Background">2. Background<a class="anchor-link" href="#2.-Background">&#182;</a></h1><p>1816, The year without summer. Five friends: Lord Byron, Percy Shelley, Mary Godwin (not yet married), Dr. John Polidori and Claire Clairmont, have assembled at the Villa Diodati near lake Geneva and were engaged in a friendly contest of writing horror stories. In this setting, Mary (18 at the time) has written "Frankenstein, or the Modern Prometheus".</p>
 <p>At first, the book was published (1818) anonymously with Percy Shelley's preface, which set the belief that he was the writer and not his wife. The book was published two more times (1823, 1831) under Mary's name, but the critics continued to claim that if not an only writer, Percy was at least "a minor collaborator" (James Rieger, 1974).</p>
 <p>Some of the critics' claims were:</p>
 <ul>
@@ -14042,9 +14042,14 @@ weighted avg       0.88      0.88      0.88      4808
 <blockquote><p>As this edition will make evident, MWS is the creative genius by which this novel was conceived and developed, we can call PBS an able midwife who helped his wife bring her monster to life.</p>
 <p>PBS's contributions to Frankenstein were no more than what most publishers' editors have provided new (or old) authors or, in fact, what colleagues have provided to each other after reading each other's works in progress.</p>
 </blockquote>
+<p>It should be noted that even though the classifier achieved 87% accuracy, this result should be taken with a grain of salt:</p>
+<ul>
+<li>The training corpus was relatively small, with only about 24K sentences in total (12K for each author).</li>
+<li>87% still means that more than one sentence in ten could be misclassified, and with Frankenstein’s 3,083 tokenized sentences, this can add up to more than 300 misclassified sentences.</li>
+</ul>
 <p>While Robinson estimated Percy Shelley have contributed around 4,000-5,000 words, my results show his contribution was as high as 8,280 words. This might indicate that further tuning is in order.</p>
 <p>Moreover, we must take into consideration the fact that many hands are involved in every book publication (until this very day), therefore it cannot be said that any of the texts used in this project were written solely by either or both of the Shelleys.</p>
-<h2 id="A-Female-Perspective">A Female Perspective<a class="anchor-link" href="#A-Female-Perspective">&#182;</a></h2><p>As I read about Mary Shelley, I found out that although she never went to school, her father (William Godwin, a political philosopher) provided her a rich and informal education. His library contained not only his works, but also her late mother's (Mary Wollstonecraft Godwin) which had a reputation of her own as a feminist philosopher and writer.</p>
+<h2 id="A-Personal-Note">A Personal Note<a class="anchor-link" href="#A-Personal-Note">&#182;</a></h2><p>As I read about Mary Shelley, I found out that although she never went to school, her father (William Godwin, a political philosopher) provided her a rich and informal education. His library contained not only his works, but also her late mother's (Mary Wollstonecraft Godwin) which had a reputation of her own as a feminist philosopher and writer.</p>
 <p>With this background, I was somewhat confused by some of the widely accepted opinions which surrounded the Shelley's relationship. The assumption that Percy Shelley was the writer started when the novel was published anonymously, and this assumption was only strengthened when the draft found at 1974 had many notes which were automatically assumed to be Percy Shelley's. Some of the critics' conclusions were:</p>
 <blockquote><p>In short, by means of condescension and egotism, he suppressed his wife’s distinctive vision. Worse still, Mary Shelley ‘shared Percy’s opinion of her inferior literary abilities’ and ‘substituted Percy’s style for her own’. It proved their marriage was one ‘in which the husband played the dominant role’ — Anne K. Mellor, 1988</p>
 <p>Mary Shelley felt unable ‘to put [her]self forward unless led, cherished &amp; supported,’ and she perceived this need for support as feminine, ‘the woman’s love of looking up and being guided’. It might be, then, that this ideology of dependent femininity rendered her unable to write her own text without her husband’s help. Moreover, collaboration forced by a more dominant writer on a less powerful and perhaps unwilling ‘partner’ is a kind of rape; if Frankenstein is the product of such a union, then it evinces a debilitating femininity. — Johanna M. Smith, 1992</p>
@@ -14069,10 +14074,26 @@ weighted avg       0.88      0.88      0.88      4808
 <li><a href="https://www.gutenberg.org/ebooks/author/1529">Works by Percy Bysshe Shelley at Project Gutenberg</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Frankenstein_authorship_question">The Frankenstein authorship question at Wikipedia</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Villa_Diodati">Villa Diodati at Wikipedia</a></li>
+<li>מנהיים, נועה. הרשת התרבותית. הוצאת גרף, 2019, פרק 38.</li>
+<li>טריאסט איילת, מנהיים נועה. 27.6.2019, פרנקנשטיין (פרק 1), פודקאסט ב-האחיות גרים, גלי צה"ל.
+<a href="https://bit.ly/3ufBJcr">https://glz.co.il/גלצ/תוכניות/האחיות-גרים/האחיות-גרים08-07-2020-2031</a></li>
 </ul>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
